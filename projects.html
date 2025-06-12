@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Projects | [Shoheb Mansoor Ali] Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0d1117 0%, #151b2d 100%);
+      color: #f8f8f8;
+      min-height: 100vh;
+      position: relative;
+    }
+    .stars {
+      position: fixed;
+      inset: 0;
+      width: 100vw; height: 100vh;
+      z-index: 1;
+      pointer-events: none;
+      background: url('data:image/svg+xml;utf8,<svg width="100" height="100" fill="white" fill-opacity="0.13" xmlns="http://www.w3.org/2000/svg"><circle cx="13" cy="17" r="1.5"/><circle cx="63" cy="77" r="0.9"/><circle cx="30" cy="60" r="1.1"/><circle cx="89" cy="10" r="1.2"/></svg>');
+      background-size: 120px 120px;
+      animation: starsMove 60s linear infinite;
+    }
+    @keyframes starsMove {
+      0% { background-position: 0 0; }
+      100% { background-position: 120px 240px; }
+    }
+    .navbar {
+      display: flex;
+      justify-content: center;
+      background: rgba(20, 20, 30, 0.85);
+      padding: 1.5rem 0;
+      margin-bottom: 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+    }
+    .navbar ul {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      padding: 0.5rem 1.5rem;
+      font-weight: 500;
+      font-size: 1.1rem;
+      border-radius: 50px;
+      transition: all 0.3s;
+    }
+    .navbar a:hover, .navbar a.active {
+      color: #31e8ff;
+      background: rgba(255,255,255,0.08);
+    }
+    h1, h2 {
+      text-align: center;
+      margin-top: 0.5em;
+    }
+    section {
+      margin-bottom: 3.5rem;
+      z-index: 2;
+      position: relative;
+      background: rgba(30,30,40,0.7);
+      border-radius: 16px;
+      padding: 1.5rem 1rem 1.5rem 1rem;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+    }
+    .project-desc {
+      text-align: center;
+      margin: 0.5em 0 1.5em 0;
+      font-size: 1.05rem;
+    }
+    .slideshow-container {
+  max-width: 650px;
+  min-height: 370px;
+}
+
+.project-slide {
+  height: 370px;
+}
+    
+    .project-slide {
+      display: none;
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      background: #222;
+      border-radius: 0;
+    }
+    .active-slide {
+      display: block;
+    }
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 12px 16px;
+      color: #fff;
+      font-weight: bold;
+      font-size: 1.5rem;
+      border-radius: 3px;
+      background-color: rgba(0,0,0,0.4);
+      user-select: none;
+      transform: translateY(-50%);
+      z-index: 2;
+      transition: background 0.2s;
+      border: none;
+    }
+    .prev { left: 0; }
+    .next { right: 0; }
+    .prev:hover, .next:hover { background: #31e8ff; color: #222; }
+    .slide-dots {
+      text-align: center;
+      padding: 10px 0 12px 0;
+      background: #232323;
+    }
+    .dot {
+      cursor: pointer;
+      height: 12px;
+      width: 12px;
+      margin: 0 3px;
+      background: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background 0.3s;
+      border: 2px solid transparent;
+    }
+    .dot.active { background: #31e8ff; border-color: #31e8ff; }
+    @media (max-width: 700px) {
+      .slideshow-container { max-width: 98vw; }
+      .project-slide { height: 140px; }
+      section { padding: 1rem 0.3rem; }
+    }
+    @media (max-width: 500px) {
+      .project-slide { height: 90px; }
+      h1 { font-size: 1.4rem; }
+      h2 { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="stars"></div>
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+       <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <h1>Explore My Projects</h1>
+  
+  <!-- Project 1 -->
+  <section>
+    <h2>Project 1: Technical Drawing</h2>
+    <div class="project-desc">
+      As part of a technical drawing group project, we designed and built a scaled model of a Stadium. The project involved detailed planning, accurate measurements, and collaborative problem-solving. I contributed to drafting blueprints, selecting materials, and assembling the model. This experience strengthened my skills in design, teamwork, and precision.
+    </div>
+    <div class="slideshow-container" id="slideshow1">
+      <img class="project-slide active-slide" src="Images/TD 1.jpg" alt="Project 1 Screenshot 1">
+      <img class="project-slide" src="Images/TD 2.jpg" alt="Project 1 Screenshot 2">
+      <img class="project-slide" src="Images/TD 3.jpg" alt="Project 1 Screenshot 3">
+      <button class="prev" onclick="plusSlides(-1, 1)">&lt;</button>
+      <button class="next" onclick="plusSlides(1, 1)">&gt;</button>
+      <div class="slide-dots">
+        <span class="dot active" onclick="currentSlide(1, 1)"></span>
+        <span class="dot" onclick="currentSlide(2, 1)"></span>
+        <span class="dot" onclick="currentSlide(3, 1)"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project 2 -->
+  <section>
+    <h2>Project 2: Cadets</h2>
+    <div class="project-desc">
+      Participating in cadets at Xavier College was a rewarding experience that built leadership, discipline, and teamwork. Through various training activities, camps, and parades, I developed resilience and confidence. The program encouraged responsibility and fostered strong camaraderie among peers. It was a formative part of my school journey.
+    </div>
+    <div class="slideshow-container" id="slideshow2">
+      <img class="project-slide active-slide" src="Images/cadet 1.JPG" alt="Project 2 Screenshot 1">
+      <img class="project-slide" src="Images/cadet 2.JPG" alt="Project 2 Screenshot 2">
+      <img class="project-slide" src="Images/cadet 3.JPG" alt="Project 2 Screenshot 3">
+      <button class="prev" onclick="plusSlides(-1, 2)">&lt;</button>
+      <button class="next" onclick="plusSlides(1, 2)">&gt;</button>
+      <div class="slide-dots">
+        <span class="dot active" onclick="currentSlide(1, 2)"></span>
+        <span class="dot" onclick="currentSlide(2, 2)"></span>
+        <span class="dot" onclick="currentSlide(3, 2)"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project 3 -->
+  <section>
+    <h2>Project 3: Wage Calculation</h2>
+    <div class="project-desc">
+      For a computer project, I created a wage calculator form using Visual Basic. The program allowed users to input hours worked and hourly rates to calculate total wages, including overtime. I designed the user interface and wrote the code to perform calculations and error checks. This project improved my programming, problem-solving, and UI design skills.
+    </div>
+    <div class="slideshow-container" id="slideshow3">
+      <img class="project-slide active-slide" src="Images/project3-1.jpg" alt="Project 3 Screenshot 1">
+      <img class="project-slide" src="Images/project3-2.jpg" alt="Project 3 Screenshot 2">
+      <img class="project-slide" src="Images/project3-3.jpg" alt="Project 3 Screenshot 3">
+      <button class="prev" onclick="plusSlides(-1, 3)">&lt;</button>
+      <button class="next" onclick="plusSlides(1, 3)">&gt;</button>
+      <div class="slide-dots">
+        <span class="dot active" onclick="currentSlide(1, 3)"></span>
+        <span class="dot" onclick="currentSlide(2, 3)"></span>
+        <span class="dot" onclick="currentSlide(3, 3)"></span>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Multi-slideshow support for 3 projects
+    let slideIndices = [1, 1, 1];
+    let slideIntervals = [null, null, null];
+    // Initialize all slideshows
+    for(let i=1; i<=3; i++) showSlides(1, i);
+
+    function plusSlides(n, slideshowNum) {
+      showSlides(slideIndices[slideshowNum - 1] += n, slideshowNum, true);
+    }
+    function currentSlide(n, slideshowNum) {
+      showSlides(slideIndices[slideshowNum - 1] = n, slideshowNum, true);
+    }
+    function showSlides(n, slideshowNum, resetTimer=false) {
+      let slideshow = document.getElementById('slideshow' + slideshowNum);
+      let slides = slideshow.getElementsByClassName("project-slide");
+      let dots = slideshow.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndices[slideshowNum - 1] = 1}
+      if (n < 1) {slideIndices[slideshowNum - 1] = slides.length}
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].classList.remove("active-slide");
+      }
+      for (let i = 0; i < dots.length; i++) {
+        dots[i].classList.remove("active");
+      }
+      slides[slideIndices[slideshowNum - 1] - 1].classList.add("active-slide");
+      dots[slideIndices[slideshowNum - 1] - 1].classList.add("active");
+
+      // Automatic slide
+      if (slideIntervals[slideshowNum - 1]) clearInterval(slideIntervals[slideshowNum - 1]);
+      slideIntervals[slideshowNum - 1] = setInterval(() => {
+        showSlides(slideIndices[slideshowNum - 1] += 1, slideshowNum);
+      }, 3000);
+      // If user interacted, reset to start interval fresh
+      if (resetTimer) {
+        clearInterval(slideIntervals[slideshowNum - 1]);
+        slideIntervals[slideshowNum - 1] = setInterval(() => {
+          showSlides(slideIndices[slideshowNum - 1] += 1, slideshowNum);
+        }, 3000);
+      }
+    }
+    // Stop all intervals when the user leaves the page
+    window.addEventListener('beforeunload', () => {
+      slideIntervals.forEach(iv => iv && clearInterval(iv));
+    });
+  </script>
+  <footer>
+  <p>&copy; 2025 Shoheb Mansoor Ali. All rights reserved.</p>
+  </footer>
+</body>
+</html>

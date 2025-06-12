@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | [Shoheb Mansoor Ali] Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', Arial, sans-serif;
+      background: linear-gradient(135deg, #0d1117 0%, #151b2d 100%);
+      color: #f8f8f8;
+      min-height: 100vh;
+      position: relative;
+    }
+    .stars {
+      position: fixed;
+      inset: 0;
+      width: 100vw; height: 100vh;
+      z-index: 1;
+      pointer-events: none;
+      background: url('data:image/svg+xml;utf8,<svg width="100" height="100" fill="white" fill-opacity="0.13" xmlns="http://www.w3.org/2000/svg"><circle cx="13" cy="17" r="1.5"/><circle cx="63" cy="77" r="0.9"/><circle cx="30" cy="60" r="1.1"/><circle cx="89" cy="10" r="1.2"/></svg>');
+      background-size: 120px 120px;
+      animation: starsMove 60s linear infinite;
+    }
+    @keyframes starsMove {
+      0% { background-position: 0 0; }
+      100% { background-position: 120px 240px; }
+    }
+    .navbar {
+      display: flex;
+      justify-content: center;
+      background: rgba(20, 20, 30, 0.85);
+      padding: 1.5rem 0;
+      margin-bottom: 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+    }
+    .navbar ul {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      padding: 0.5rem 1.5rem;
+      font-weight: 500;
+      font-size: 1.1rem;
+      border-radius: 50px;
+      transition: all 0.3s;
+    }
+    .navbar a:hover, .navbar a.active {
+      color: #31e8ff;
+      background: rgba(255,255,255,0.08);
+    }
+    main {
+      position: relative;
+      z-index: 2;
+    }
+    .hero {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .hero span {
+      color: #31e8ff;
+    }
+    .contact-container {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      max-width: 900px;
+      margin: 0 auto 2rem auto;
+      background: rgba(30,30,40,0.7);
+      border-radius: 18px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+      padding: 2rem 1rem;
+    }
+    .contact-info, .contact-form {
+      flex: 1 1 300px;
+      min-width: 280px;
+    }
+    .contact-info h2, .contact-form h2 {
+      font-size: 1.3rem;
+      margin-bottom: 1.2rem;
+      color: #31e8ff;
+      font-weight: 600;
+    }
+    .info-box {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1.3rem;
+      background: rgba(36,40,56,0.7);
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.09);
+    }
+    .info-box .icon {
+      font-size: 1.7rem;
+      margin-right: 1.2rem;
+      color: #31e8ff;
+      min-width: 32px;
+      text-align: center;
+    }
+    .info-box .viber {
+      color: #7c529e;
+    }
+    .info-box h3 {
+      margin: 0;
+      font-size: 1.08rem;
+      font-weight: 600;
+      color: #fff;
+    }
+    .info-box p, .info-box a {
+      margin: 0.1em 0 0 0;
+      color: #b3e5fc;
+      font-size: 1.01rem;
+      word-break: break-all;
+    }
+    .contact-form form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .input-box {
+      position: relative;
+      margin-bottom: 1rem;
+    }
+    .input-box input,
+    .input-box textarea {
+      width: 100%;
+      padding: 15px 10px;
+      background: #181c24;
+      border: 1.5px solid #31e8ff99;
+      border-radius: 7px;
+      color: #fff;
+      font-size: 1rem;
+      transition: border 0.2s;
+      font-family: inherit;
+      outline: none;
+      resize: none;
+    }
+    .input-box input:focus,
+    .input-box textarea:focus {
+      border-color: #31e8ff;
+    }
+    .input-box span {
+      position: absolute;
+      top: 12px;
+      left: 15px;
+      color: #888;
+      font-size: 1rem;
+      pointer-events: none;
+      transition: 0.3s;
+      background: transparent;
+    }
+    .input-box input:focus + span,
+    .input-box input:not(:placeholder-shown) + span,
+    .input-box textarea:focus + span,
+    .input-box textarea:not(:placeholder-shown) + span {
+      top: -18px;
+      left: 8px;
+      font-size: 0.89rem;
+      color: #31e8ff;
+      background: #181c24;
+      padding: 0 4px;
+    }
+    .input-box input[type="submit"] {
+      background: #31e8ff;
+      color: #181c24;
+      border: none;
+      font-weight: 700;
+      font-size: 1.09rem;
+      cursor: pointer;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+      padding: 12px 0;
+      transition: background 0.2s;
+    }
+    .input-box input[type="submit"]:hover {
+      background: #1ec4d7;
+    }
+    footer {
+      text-align: center;
+      padding: 1.3rem 0 0.8rem 0;
+      color: #7d93b7;
+      font-size: 0.96rem;
+      background: transparent;
+      z-index: 2;
+      position: relative;
+    }
+    @media (max-width: 700px) {
+      .contact-container { flex-direction: column; gap: 1.7rem; padding: 1.2rem 0.3rem;}
+      .hero h1 { font-size: 1.6rem;}
+      main { padding-bottom: 2rem;}
+    }
+  </style>
+</head>
+<body>
+  <div class="stars"></div>
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="intro">
+        <h1>Contact <span>Me</span></h1>
+        <p>Have a question or want to work together? I'd love to hear from you.</p>
+      </div>
+    </section>
+
+    <div class="contact-container">
+      <div class="contact-info">
+        <h2><i class="fas fa-paper-plane"></i> Contact Info</h2>
+        <div class="info-box">
+          <i class="fas fa-envelope icon"></i>
+          <div>
+            <h3>Email</h3>
+            <p><a href="mailto:alishoheb34@gmail.com" class="link-highlight">alishoheb34@gmail.com</a></p>
+          </div>
+        </div>
+        <div class="info-box">
+          <i class="fas fa-phone-alt icon"></i>
+          <div>
+            <h3>Phone</h3>
+            <p><a href="tel:+1234567890" class="link-highlight">+679 7544004</a></p>
+          </div>
+        </div>
+        <div class="info-box">
+          <i class="fab fa-viber icon viber"></i>
+          <div>
+            <h3>Viber</h3>
+            <p><a href="viber://chat?number=%2B1234567890" class="link-highlight">+679 7544004</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <h2><i class="fas fa-comment-dots"></i> Send Message</h2>
+        <form id="contactForm">
+          <div class="input-box">
+            <input type="text" id="name" required placeholder=" ">
+            <span>Full Name</span>
+          </div>
+          <div class="input-box">
+            <input type="email" id="email" required placeholder=" ">
+            <span>Email Address</span>
+          </div>
+          <div class="input-box">
+            <textarea id="message" required placeholder=" "></textarea>
+            <span>Your Message</span>
+          </div>
+          <div class="input-box">
+            <input type="submit" value="Send Message">
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Shoheb Mansoor Ali. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+      const subject = `Message from ${name}`;
+      const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+      window.location.href = `mailto:your@email.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    });
+  </script>
+</body>
+</html>
